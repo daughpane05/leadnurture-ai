@@ -35,9 +35,11 @@ leadnurture-ai/
 ## ⚙️ Prerequisites
 
 - Python 3.10+
+- VS Code
 - A Google account
 - A Groq account (free) — [console.groq.com](https://console.groq.com)
 - A Zapier account (free) — [zapier.com](https://zapier.com)
+- Git 
 
 ---
 
@@ -169,6 +171,7 @@ groq
 ```
 .env
 credentials.json
+venv/
 ```
 
 ---
