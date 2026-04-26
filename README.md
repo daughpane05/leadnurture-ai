@@ -24,6 +24,7 @@ leadnurture-ai/
 ├── .env                 # Environment variables (do not share)
 ├── .gitignore           # Files ignored by git
 ├── credentials.json     # Google Service Account credentials (do not share)
+├── export_workflow.py   # Zapier export json script
 ├── generate_email.py    # Main script
 ├── requirements.txt     # Python dependencies
 └── README.md            # Project description
