@@ -1,0 +1,110 @@
+{
+    "workflow_name": "LeadNurture AI — Automated Campaign Follow-Up",
+    "exported_at": "2026-04-26T20:08:04.255674",
+    "description": "Automated B2B follow-up email workflow for global talent outsourcing leads.",
+    "tools": {
+        "ai_model": "Groq — LLaMA 3.1 (llama-3.1-8b-instant)",
+        "database": "Google Sheets",
+        "automation": "Zapier",
+        "email": "Gmail",
+        "language": "Python 3.12"
+    },
+    "zapier_zap": {
+        "zap_name": "LeadNurture AI — Send Follow-Up Email",
+        "steps": [
+            {
+                "step": 1,
+                "type": "Trigger",
+                "app": "Google Sheets",
+                "action": "New or Updated Spreadsheet Row",
+                "config": {
+                    "spreadsheet": "LeadNurture AI",
+                    "worksheet": "Sheet1",
+                    "trigger_column": "H (Status)"
+                }
+            },
+            {
+                "step": 2,
+                "type": "Filter",
+                "app": "Zapier Filter",
+                "action": "Only continue if",
+                "config": {
+                    "field": "Status",
+                    "condition": "equals",
+                    "value": "Email Generated"
+                }
+            },
+            {
+                "step": 3,
+                "type": "Action",
+                "app": "Gmail",
+                "action": "Send Email",
+                "config": {
+                    "to": "{{Email}} — Column E",
+                    "subject": "{{AI Email Subject}} — Column I",
+                    "body": "{{AI Email Body}} — Column J",
+                    "from_name": "LeadNurture AI",
+                    "company": "GoTeam"
+                }
+            },
+            {
+                "step": 4,
+                "type": "Action",
+                "app": "Google Sheets",
+                "action": "Update Spreadsheet Row",
+                "config": {
+                    "spreadsheet": "LeadNurture AI",
+                    "worksheet": "Sheet1",
+                    "column_H": "Sent"
+                }
+            }
+        ]
+    },
+    "python_script": {
+        "file": "email_generator.py",
+        "ai_provider": "Groq",
+        "model": "llama-3.1-8b-instant",
+        "functions": [
+            "generate_email() — Calls Groq AI to generate personalized email",
+            "process_leads() — Reads leads from Google Sheets and updates status"
+        ]
+    },
+    "test_run_results": {
+        "total_leads_processed": 3,
+        "leads": [
+            {
+                "lead_id": 1,
+                "name": "Daughpane Reponte",
+                "company": "GoTeamStar",
+                "email": "dsreponte@gmail.com",
+                "country": "Philippines",
+                "industry": "Tech",
+                "status": "Email Generated",
+                "ai_subject": "Exciting Opportunities with GoTeam in the Philippines",
+                "ai_body": "Hi Daughpane,\n\nI hope you're doing great at GoTeamStar! I wanted to follow up on our previous conversation regarding your business needs. I understand that finding top talent in the ever-evolving tech landscape can be a significant challenge.\n\nThe Philippines has become a go-to destination for tech companies seeking exceptional talent. With a highly skilled and English-proficient workforce, outsourcing talent from the Philippines can provide GoTeamStar with an competitive advantage. You can expect to save up to 70% in talent acquisition costs, accelerate development timelines, and tap into a pool of skilled professionals with expertise in cutting-edge technologies.\n\nI'd love to explore how our services can help bridge the talent gap at GoTeamStar. Let's discuss how our expertise can enhance your business. I propose a 30-minute discovery call to explore your requirements and find a tailored solution.\n\nBook a call at your earliest convenience: https://calendly.com/go-team/discovery-call\n\nBest regards,\nLeadNurture AI\nGoTeam"
+            },
+            {
+                "lead_id": 2,
+                "name": "John Smith",
+                "company": "TechCorp",
+                "email": "john@techcorp.com",
+                "country": "USA",
+                "industry": "IT Services",
+                "status": "Email Generated",
+                "ai_subject": "Catching Up on Our Previous Discussion",
+                "ai_body": "Hi John,\n\nI hope you're doing well. I wanted to follow up on our previous conversation and see if we could continue exploring how our talent outsourcing solutions from the Philippines can support your IT Services business at TechCorp. By partnering with us, you can tap into a high-quality, cost-efficient pool of expertise to accelerate project timelines, reduce labor costs, and improve overall productivity.\n\nWould you be available for a 30-minute discovery call to discuss further how our outsourcing model can benefit your organization? You can easily book a time slot that suits you using this link: https://calendly.com/go-team/discovery-call\n\nBest regards,\nLeadNurture AI\nGoTeam"
+            },
+            {
+                "lead_id": 3,
+                "name": "Angel Uno",
+                "company": "AU Works",
+                "email": "angel@auworks.com",
+                "country": "Hawaii",
+                "industry": "Business",
+                "status": "Sent",
+                "ai_subject": "Follow-up on Outsourcing Talent Opportunities for AU Works, Hawaii",
+                "ai_body": "Hi Angel,\n\nI hope this email finds you well. It's LeadNurture from GoTeam, and I wanted to follow up on our previous conversation about exploring talent outsourcing opportunities for AU Works. As we discussed, partnering with us can help you access a skilled workforce from the Philippines, allowing you to scale your business efficiently and effectively.\n\nOur clients in the business sector have seen increased productivity and cost savings by leveraging our talent outsourcing services. I'd love to take a deeper dive into how we can tailor our solution to meet your unique business needs. Would you be available for a 30-minute discovery call to discuss further?\n\nPlease book your call time here: https://calendly.com/go-team/aangel-uno\n\nBest regards,\nLeadNurture AI\nGoTeam"
+            }
+        ]
+    }
+}
