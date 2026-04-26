@@ -20,12 +20,13 @@ LeadNurture AI addresses the inefficiencies of manual follow-up in global talent
 
 ```
 leadnurture-ai/
-│
-├── email_generator.py   # Main script
-├── credentials.json     # Google Service Account credentials (do not share)
+├── venv                 # virtual environment
 ├── .env                 # Environment variables (do not share)
+├── .gitignore           # Files ignored by git
+├── credentials.json     # Google Service Account credentials (do not share)
+├── generate_email.py    # Main script
 ├── requirements.txt     # Python dependencies
-└── README.md            # Project documentation
+└── README.md            # Project description
 ```
 
 ---
@@ -43,7 +44,7 @@ leadnurture-ai/
 
 ### 1. Clone or Download the Project
 ```bash
-git clone https://github.com/your-repo/leadnurture-ai.git
+git clone https://github.com/daughpane05/leadnurture-ai.git
 cd leadnurture-ai
 ```
 
@@ -99,7 +100,7 @@ SENDER_COMPANY=name-of-company
 ## ▶️ Running the Script
 
 ```bash
-python email_generator.py
+python generate_email.py
 ```
 
 Expected output:
@@ -132,7 +133,7 @@ Once the sheet is updated, Zapier handles sending the email automatically:
 ```
 Google Sheets (Status = "New")
         ↓
-email_generator.py
+generate_email.py
         ↓
 Groq AI — LLaMA 3.1 (Generates personalized email)
         ↓
