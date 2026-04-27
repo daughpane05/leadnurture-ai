@@ -99,7 +99,6 @@ SENDER_COMPANY=name-of-company
 ```
 
 > Get your free Groq API key at [console.groq.com](https://console.groq.com) → API Keys → Create New Key
-
 ---
 
 ## ▶️ Running the Script
@@ -117,6 +116,8 @@ Done processing all new leads.
 ```
 
 After running, check your Google Sheet — leads with `Status = New` will be updated to `Email Generated` with AI-generated subject and body filled in columns I and J.
+
+Manual script execution is used to enable controlled batch email delivery, reducing the risk of triggering spam detection systems.
 
 ---
 
@@ -175,6 +176,8 @@ groq
 credentials.json
 venv/
 ```
+
+For this project, please contact the owner to access the .env and credentials.json files as these contain sensitive data.
 
 ---
 
