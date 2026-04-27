@@ -77,6 +77,8 @@ Create a Google Sheet named **"LeadNurture AI"** with the following columns:
 
 Add dummy leads manually and set their `Status` to `New`.
 
+Link for the Google Sheet used in this project: https://docs.google.com/spreadsheets/d/1n3rb8Uz0Un7kZCk6JWA0tKszUF8MKZdk2bRKdUp_KE8/edit?usp=drivesdk
+
 ### 5. Set Up Google Cloud Credentials
 
 1. Go to [console.cloud.google.com](https://console.cloud.google.com)
